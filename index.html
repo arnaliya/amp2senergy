@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMP²S ENERGY | Next-gen charging, squared.</title>
+    <style>
+        /* Base Styles & Dark Mode Theme */
+        :root {
+            --bg-color: #0d0d0d;
+            --text-color: #f4f4f4;
+            --accent-green: #6b8e23; /* Matches your logo */
+            --accent-glow: #85c933;
+            --surface-color: #1a1a1a;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: rgba(13, 13, 13, 0.9);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-sizing: border-box;
+            border-bottom: 1px solid #333;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+        }
+
+        .logo-container img {
+            height: 100px; /* Replace with your actual logo file path */
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-green);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background: linear-gradient(180deg, #0d0d0d 0%, #1a2a1a 100%);
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 span {
+            color: var(--accent-green);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: #aaa;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            background-color: var(--accent-green);
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(107, 142, 35, 0.4);
+        }
+
+        .btn:hover {
+            background-color: var(--accent-glow);
+            box-shadow: 0 0 25px rgba(133, 201, 51, 0.7);
+            transform: translateY(-2px);
+        }
+
+        /* Station Preview Section */
+        .preview-section {
+            padding: 100px 50px;
+            text-align: center;
+        }
+
+        .preview-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        .image-mockup {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            border: 1px solid #333;
+        }
+
+        /* Mission / About Section */
+        .mission {
+            background-color: var(--surface-color);
+            padding: 80px 50px;
+            text-align: center;
+        }
+
+        .mission p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #ccc;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        /* Maps & Location Section Styles */
+    .location-section {
+        background-color: var(--bg-color);
+        padding: 80px 50px;
+        text-align: center;
+        border-top: 1px solid #333;
+    }
+
+    .location-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        color: var(--text-color);
+    }
+
+    .location-section p.subtitle {
+        color: #aaa;
+        margin-bottom: 40px;
+        font-size: 1.1rem;
+    }
+
+    .map-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+        border: 1px solid #333;
+    }
+
+    .map-container {
+        position: relative;
+        padding-bottom: 45%; /* Controls the height of the map */
+        height: 0;
+        overflow: hidden;
+    }
+
+    .map-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        /* This filter turns the standard map into a seamless Dark Mode map */
+        filter: invert(90%) hue-rotate(180deg) contrast(100%); 
+    }
+
+    .address-card {
+        background-color: var(--surface-color);
+        max-width: 600px;
+        margin: 30px auto 0;
+        padding: 25px;
+        border-radius: 8px;
+        border: 1px solid #333;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    }
+
+    .address-card h3 {
+        color: var(--accent-green);
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 1.4rem;
+        letter-spacing: 1px;
+    }
+
+    .address-card p {
+        margin: 8px 0;
+        color: #ccc;
+        font-size: 1.1rem;
+    }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo-container">
+            <!-- Replace 'logo.png' with the actual file name of your logo -->
+            <img src="AMP2S ENERGY LOGO copy.png" alt="AMP2S Logo"> 
+            <img src="AMP2S ENERGY LOGO copy 2.png" alt="AMP²S Energy">
+        </div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#stations">Our Stations</a>
+            <a href="#mission">Mission</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <h1>Welcome to <span>AMP²S</span></h1>
+        <p>Next-gen charging, squared.</p>
+        <a href="#stations" class="btn">Find a Charger</a>
+    </section>
+
+    <section id="mission" class="mission">
+        <h2>Intelligent Energy for the Open Road</h2>
+        <p>Our mission is to build an intelligent, frictionless EV charging network that redefines convenience for the modern driver, blending robust sustainable hardware with seamless digital experiences. Whether you are commuting locally or embarking on a long journey, we keep your momentum powering forward.</p>
+    </section>
+
+    <section id="stations" class="preview-section">
+        <h2>Premium EV Charging Destination</h2>
+        <!-- Replace 'station-mockup.jpg' with your "amp2s layout on road.jpg" file -->
+        <img src="amp2s layout on road.jpeg" alt="AMP2S Station Layout" class="image-mockup">
+        <p style="margin-top: 20px; color: #aaa;">Coming soon.</p>
+        <p class=""
+    </section>
+
+    
+    <section id="location" class="location-section">
+    <h2>Find a Charger</h2>
+    <p class="subtitle">Visit our flagship pilot hub to power up.</p>
+    
+    <div class="map-wrapper">
+        <div class="map-container">
+            <!-- Google Maps Embed -->
+            <iframe 
+                src="https://maps.app.goo.gl/wvvqo1dixogAugZDA"
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+
+    <div class="address-card">
+        <h3>AMP²S ENERGY</h3>
+        <p>Arica Cafe, Street Road, off Billionaire, near Vishakha Circle, Mumatpura.</p>
+        <p>, Ahmedabad, Gujarat 380058</p>
+        <p style="color: var(--text-color); margin-top: 15px;">
+            <strong>Status:</strong> Open 24/7 &nbsp;|&nbsp; Fast Charging (DCFC) Available
+        </p>
+    </div>
+</section> 
+
+
+    
+
+
+    <footer id="contact">
+        <p>&copy; 2026 AMP²S ENERGY. All rights reserved.</p>
+        <p>Inquiries: amp2senergy@gmail.com </p>
+    </footer>
+
+
+</body>
+</html>
